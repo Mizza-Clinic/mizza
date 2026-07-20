@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  /* Paleta editorial — cru quente, tinta quase-preta, bronze discreto */
+  --color-cru: #f6f3ee;
+  --color-carvao: #1b1815;
+  --color-grafite: #575047;
+  --color-bronze: #8c6f52;
+  --color-bronze-escuro: #6f563e;
+  --color-linha: #e3dcd1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cru);
+  color: var(--color-carvao);
+  -webkit-font-smoothing: antialiased;
+}
