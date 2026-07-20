@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, Jost } from "next/font/google";
+import localFont from "next/font/local";
 import { MetaPixel } from "@/components/MetaPixel";
 import "./globals.css";
 
@@ -13,10 +14,24 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+// Corpo de texto da LP — sans geométrica leve (direção maison)
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
+});
+
+// Voz tipográfica da marca — display, só headlines e labels de seção.
+// Pendência: confirmar se a licença Envato da clínica cobre uso como webfont.
+const bevas = localFont({
+  src: "./fonts/bevas.woff",
+  variable: "--font-bevas",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Mentoria em Resina Composta — Dra. Isabella Barbosa | Mizza Academy",
   description:
-    "Dois dias de imersão presencial na Mizza Clinic: teoria, hands-on e atendimento de paciente real. Você não observa — você faz.",
+    "Dois dias de imersão presencial na Mizza Clinic: teoria, hands-on e um caso real finalizado por você, do planejamento ao polimento.",
 };
 
 export default function RootLayout({
@@ -25,7 +40,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
+    <html
+      lang="pt-BR"
+      className={`${fraunces.variable} ${inter.variable} ${jost.variable} ${bevas.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col font-sans">
         <MetaPixel />
         {children}

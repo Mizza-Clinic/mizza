@@ -3,10 +3,19 @@
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  /* Voz tipográfica da marca (display — só headlines e labels de seção) */
+  --font-bevas: var(--font-bevas), ui-serif, Georgia, serif;
+  /* Sans geométrica leve — corpo de texto da LP maison */
+  --font-jost: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
 
-  /* Paleta da identidade Mizza — areia e marrom extraídos do logo oficial */
-  --color-cru: #f6f3ee;
+  /* Identidade Mizza (Bradu Brand Agency) — direção maison aprovada 20/07:
+     preto profundo + areia protagonista; marrom = acento raro (1 uso/página) */
+  --color-preto: #0e0c0a;
   --color-areia: #d4c8b2;
+  --color-marrom: #7a4012;
+
+  /* Tokens do painel da Amanda (ferramenta interna, estilo próprio) */
+  --color-cru: #f6f3ee;
   --color-carvao: #1b1815;
   --color-grafite: #575047;
   --color-bronze: #7a4012;
