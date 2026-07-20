@@ -4,13 +4,14 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
 
-  /* Paleta editorial — cru quente, tinta quase-preta, bronze discreto */
+  /* Paleta da identidade Mizza — areia e marrom extraídos do logo oficial */
   --color-cru: #f6f3ee;
+  --color-areia: #d4c8b2;
   --color-carvao: #1b1815;
   --color-grafite: #575047;
-  --color-bronze: #8c6f52;
-  --color-bronze-escuro: #6f563e;
-  --color-linha: #e3dcd1;
+  --color-bronze: #7a4012;
+  --color-bronze-escuro: #5e3110;
+  --color-linha: #e6dfd0;
 }
 
 html {

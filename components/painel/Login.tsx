@@ -27,8 +27,9 @@ export function Login({ supabase }: { supabase: SupabaseClient }) {
   return (
     <main className="mx-auto w-full max-w-sm px-5 py-24">
       <div className="text-center">
-        <span className="font-serif text-2xl tracking-wide">MIZZA</span>
-        <p className="mt-1 text-xs uppercase tracking-[0.2em] text-grafite">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/marca/logo-header.png" alt="Mizza" className="mx-auto h-10 w-auto" />
+        <p className="mt-3 text-xs uppercase tracking-[0.2em] text-grafite">
           Painel de leads
         </p>
       </div>

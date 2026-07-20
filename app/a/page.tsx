@@ -10,7 +10,8 @@ export default function VarianteA() {
     <main className="mx-auto w-full max-w-2xl px-5">
       {/* Cabeçalho */}
       <header className="flex items-center justify-between py-6">
-        <span className="font-serif text-lg tracking-wide">MIZZA</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/marca/logo-header.png" alt="Mizza" className="h-8 w-auto" />
         <span className="text-xs uppercase tracking-[0.2em] text-grafite">Academy</span>
       </header>
 
