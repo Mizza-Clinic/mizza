@@ -21,7 +21,7 @@ export default function VarianteB() {
         <p className="mt-10 text-[11px] uppercase tracking-[0.3em] text-areia/70">
           Mentoria presencial · Maringá/PR
         </p>
-        <h1 className="mx-auto mt-5 max-w-xl font-bevas text-4xl leading-[1.1] text-areia sm:text-5xl">
+        <h1 className="mx-auto mt-5 max-w-xl font-display text-4xl leading-[1.1] text-areia sm:text-5xl">
           O MANEQUIM NÃO REAGE.
           <br />
           O PACIENTE, SIM.

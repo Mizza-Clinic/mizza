@@ -3,7 +3,9 @@
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
-  /* Voz tipográfica da marca (display — só headlines e labels de seção) */
+  /* Títulos da LP — serifa romana limpa (maison com legibilidade) */
+  --font-display: var(--font-marcellus), ui-serif, Georgia, serif;
+  /* Voz tipográfica da marca (display — uso pontual: numerais, detalhes) */
   --font-bevas: var(--font-bevas), ui-serif, Georgia, serif;
   /* Sans geométrica leve — corpo de texto da LP maison */
   --font-jost: var(--font-jost), ui-sans-serif, system-ui, sans-serif;

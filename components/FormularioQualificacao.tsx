@@ -123,7 +123,7 @@ export function FormularioQualificacao({ variante }: Props) {
   if (enviado) {
     return (
       <div className="border border-preto/15 bg-white px-6 py-16 text-center">
-        <p className="font-bevas text-3xl tracking-wide">APLICAÇÃO RECEBIDA</p>
+        <p className="font-display text-3xl tracking-wide">APLICAÇÃO RECEBIDA</p>
         <p className="mx-auto mt-4 max-w-sm text-preto/70">
           A Amanda, da nossa equipe, entra em contato pelo seu WhatsApp em até
           1 dia útil.

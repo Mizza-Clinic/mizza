@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Jost } from "next/font/google";
+import { Fraunces, Inter, Jost, Marcellus } from "next/font/google";
 import localFont from "next/font/local";
 import { MetaPixel } from "@/components/MetaPixel";
 import "./globals.css";
@@ -20,7 +20,15 @@ const jost = Jost({
   variable: "--font-jost",
 });
 
-// Voz tipográfica da marca — display, só headlines e labels de seção.
+// Títulos da LP — serifa romana limpa, espírito maison com legibilidade
+// (feedback João 20/07: Bevas só em momentos pontuais)
+const marcellus = Marcellus({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-marcellus",
+});
+
+// Voz tipográfica da marca — display, uso PONTUAL (numerais, detalhes).
 // Pendência: confirmar se a licença Envato da clínica cobre uso como webfont.
 const bevas = localFont({
   src: "./fonts/bevas.woff",
@@ -42,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${inter.variable} ${jost.variable} ${bevas.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${inter.variable} ${jost.variable} ${marcellus.variable} ${bevas.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <MetaPixel />

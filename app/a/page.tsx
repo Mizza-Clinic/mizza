@@ -33,7 +33,7 @@ export default function VarianteA() {
           <p className="text-[11px] uppercase tracking-[0.3em] text-areia/70">
             Mentoria presencial · Maringá/PR
           </p>
-          <h1 className="mt-6 font-bevas text-5xl leading-[1.08] text-areia sm:text-6xl">
+          <h1 className="mt-6 font-display text-5xl leading-[1.08] text-areia sm:text-6xl">
             O MANEQUIM
             <br />
             NÃO REAGE.
@@ -58,7 +58,7 @@ export default function VarianteA() {
       {/* ============ DOBRA 2 — ESPELHO (bloco escuro) ============ */}
       <section className="border-t border-areia/20 bg-preto px-6 py-20 text-center">
         <div className="mx-auto max-w-xl">
-          <p className="font-bevas text-3xl leading-snug text-areia">
+          <p className="font-display text-3xl leading-snug text-areia">
             VOCÊ SABE A TÉCNICA.
           </p>
           <p className="mt-6 text-areia/80">
@@ -149,7 +149,7 @@ export default function VarianteA() {
       {/* ============ DOBRA 5 — O DIFERENCIAL (branco) ============ */}
       <section className="bg-white px-6 py-20 text-center">
         <div className="mx-auto max-w-xl">
-          <p className="font-bevas text-3xl leading-snug">
+          <p className="font-display text-3xl leading-snug">
             “QUANDO VOCÊ APRENDE AO LADO DE UM PACIENTE REAL, COM A PRESSÃO
             REAL DO ATENDIMENTO, O APRENDIZADO NÃO VAI EMBORA.”
           </p>
@@ -165,7 +165,7 @@ export default function VarianteA() {
       <section className="bg-white px-6 pb-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecao} text-center`}>Quem conduz</p>
-          <p className="mt-8 text-center font-bevas text-2xl">
+          <p className="mt-8 text-center font-display text-2xl">
             DRA. ISABELLA BARBOSA
           </p>
           <p className="mt-2 text-center text-sm text-preto/60">
@@ -183,7 +183,7 @@ export default function VarianteA() {
               aria-hidden
               className="pointer-events-none absolute -right-24 -top-24 w-72 opacity-20"
             />
-            <p className="relative font-bevas text-2xl leading-snug text-areia">
+            <p className="relative font-display text-2xl leading-snug text-areia">
               “CONSERVAR É MAIS DIFÍCIL DO QUE SUBSTITUIR.
               <br />
               POR ISSO POUCA GENTE FAZ.”
@@ -205,7 +205,7 @@ export default function VarianteA() {
           <p className={`${rotuloSecao} text-center`}>Formatos</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             <div className="border border-preto/20 p-8 text-center">
-              <p className="font-bevas text-xl">INDIVIDUAL</p>
+              <p className="font-display text-xl tracking-wide">INDIVIDUAL</p>
               <p className="mt-3 text-sm text-preto/70">
                 A imersão exclusiva. Dois dias, você e a mentora.
               </p>
@@ -214,7 +214,7 @@ export default function VarianteA() {
               </p>
             </div>
             <div className="border border-preto/20 p-8 text-center">
-              <p className="font-bevas text-xl">EM DUPLA</p>
+              <p className="font-display text-xl tracking-wide">EM DUPLA</p>
               <p className="mt-3 text-sm text-preto/70">
                 A mesma imersão, dividida com um colega da sua confiança — ou
                 com outro profissional aprovado na aplicação.
