@@ -66,6 +66,59 @@ export interface VagaParcial {
   observacoes: string | null;
 }
 
+/** Cores da faixa de score (usadas em badges do painel). */
+export function corFaixa(faixa: string): string {
+  return faixa === "alto"
+    ? "bg-green-100 text-green-900"
+    : faixa === "medio"
+      ? "bg-amber-100 text-amber-900"
+      : "bg-stone-200 text-stone-700";
+}
+
+/**
+ * Move um lead de etapa — usado tanto pela ficha quanto pelo arrastar no
+ * Kanban. Registra o evento e, se fechar um "dupla sem parceiro", abre a
+ * vaga parcial automaticamente (regra da oferta).
+ */
+export async function moverEtapaLead(
+  supabase: import("@supabase/supabase-js").SupabaseClient,
+  lead: Pick<Lead, "id" | "etapa" | "formato_interesse">,
+  nova: Etapa
+): Promise<{ error: boolean }> {
+  if (nova === lead.etapa) return { error: false };
+
+  const { error } = await supabase.from("leads").update({ etapa: nova }).eq("id", lead.id);
+  if (error) return { error: true };
+
+  await supabase.from("eventos").insert({
+    tipo: "etapa_alterada",
+    lead_id: lead.id,
+    dados: { de: lead.etapa, para: nova },
+  });
+
+  if (nova === "fechado" && lead.formato_interesse === "dupla_sem_parceiro") {
+    const { data: existente } = await supabase
+      .from("vagas_parciais")
+      .select("id")
+      .eq("lead_id", lead.id)
+      .eq("status", "aberta")
+      .maybeSingle();
+    if (!existente) {
+      const { data: vaga } = await supabase
+        .from("vagas_parciais")
+        .insert({ lead_id: lead.id })
+        .select("id")
+        .single();
+      await supabase.from("eventos").insert({
+        tipo: "vaga_parcial_aberta",
+        lead_id: lead.id,
+        dados: { vaga_id: vaga?.id },
+      });
+    }
+  }
+  return { error: false };
+}
+
 /** Link direto pra conversa no WhatsApp (números brasileiros). */
 export function linkWhatsApp(whatsapp: string): string {
   const digitos = whatsapp.replace(/\D/g, "");

@@ -9,6 +9,7 @@ import {
   ROTULO_FORMATO,
   formatarWhatsApp,
   linkWhatsApp,
+  moverEtapaLead,
   type Etapa,
   type Lead,
 } from "@/lib/crm";
@@ -32,44 +33,12 @@ export function FichaLead({ supabase, lead, aoVoltar, aoMudar }: Props) {
     if (nova === lead.etapa) return;
     setErro(null);
     setMudandoEtapa(true);
-
-    const { error } = await supabase.from("leads").update({ etapa: nova }).eq("id", lead.id);
+    const { error } = await moverEtapaLead(supabase, lead, nova);
+    setMudandoEtapa(false);
     if (error) {
       setErro("Não foi possível mudar a etapa. Tente de novo.");
-      setMudandoEtapa(false);
       return;
     }
-
-    await supabase.from("eventos").insert({
-      tipo: "etapa_alterada",
-      lead_id: lead.id,
-      dados: { de: lead.etapa, para: nova },
-    });
-
-    // Fechou "dupla sem parceiro" → abre vaga parcial (1 de 2 preenchida).
-    // A data só confirma quando o segundo aluno bater o martelo.
-    if (nova === "fechado" && lead.formato_interesse === "dupla_sem_parceiro") {
-      const { data: existente } = await supabase
-        .from("vagas_parciais")
-        .select("id")
-        .eq("lead_id", lead.id)
-        .eq("status", "aberta")
-        .maybeSingle();
-      if (!existente) {
-        const { data: vaga } = await supabase
-          .from("vagas_parciais")
-          .insert({ lead_id: lead.id })
-          .select("id")
-          .single();
-        await supabase.from("eventos").insert({
-          tipo: "vaga_parcial_aberta",
-          lead_id: lead.id,
-          dados: { vaga_id: vaga?.id },
-        });
-      }
-    }
-
-    setMudandoEtapa(false);
     aoMudar();
   }
 
