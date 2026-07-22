@@ -37,9 +37,9 @@ const bevas = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Mentoria em Resina Composta — Dra. Isabella Barbosa | Mizza Academy",
+  title: "Mentoria em Resina Composta | Dra. Isabella Barbosa | Mizza Academy",
   description:
-    "Dois dias de imersão presencial na Mizza Clinic: teoria, hands-on e um caso real finalizado por você, do planejamento ao polimento.",
+    "Dois dias de imersão presencial na Mizza Clinic. Você analisa, planeja e conduz um caso real de resina composta, com a Dra. Isabella Barbosa ao seu lado.",
 };
 
 export default function RootLayout({

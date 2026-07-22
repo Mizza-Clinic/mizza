@@ -1,15 +1,15 @@
 import { FormularioQualificacao } from "@/components/FormularioQualificacao";
 
 /**
- * VARIANTE B — form direto (lp_mentoria_copy_layout.md).
- * Página mínima: eyebrow + H1 + 3 linhas de contexto + aplicação multi-step.
+ * VARIANTE B — form direto.
+ * Página mínima: identidade + gancho + 3 linhas de contexto + aplicação.
  * Mesma identidade maison. Mede se o convencimento da LP completa paga o
  * atrito extra. Decisão do teste: custo por aluno FECHADO.
  */
 export default function VarianteB() {
   return (
     <main className="w-full font-jost text-preto">
-      {/* Contexto mínimo (preto) */}
+      {/* Contexto mínimo */}
       <section className="bg-preto px-6 py-14 text-center">
         <div className="mx-auto flex max-w-xl flex-col items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -18,19 +18,23 @@ export default function VarianteB() {
             Academy
           </span>
         </div>
+
         <p className="mt-10 text-[11px] uppercase tracking-[0.3em] text-areia/70">
-          Mentoria presencial · Maringá/PR
+          Mentoria presencial · 2 dias · Maringá/PR
         </p>
-        <h1 className="mx-auto mt-5 max-w-xl font-display text-4xl leading-[1.1] text-areia sm:text-5xl">
-          O MANEQUIM NÃO REAGE.
-          <br />
-          O PACIENTE, SIM.
+        <h1 className="mt-5 font-display text-4xl leading-[1.05] text-areia sm:text-5xl">
+          RESINA COMPOSTA
         </h1>
-        <p className="mx-auto mt-6 max-w-md text-areia/80">
-          Dois dias de imersão em resina composta com a Dra. Isabella Barbosa,
-          na Mizza Clinic. Teoria, hands-on — e um caso real finalizado por
-          você. Preencha a aplicação; a equipe retorna pelo WhatsApp com
-          formatos e datas.
+        <p className="mt-3 font-display text-lg tracking-wide text-areia/90">
+          com a Dra. Isabella Barbosa
+        </p>
+        <p className="mx-auto mt-8 max-w-md text-lg text-areia">
+          Você domina o caso. Ou você passa o caso.
+        </p>
+        <p className="mx-auto mt-4 max-w-md text-areia/75">
+          Dois dias de imersão na Mizza Clinic. Você analisa, planeja e conduz
+          um caso real, com ela ao seu lado. Preencha a aplicação e a equipe
+          retorna pelo WhatsApp com formatos e datas.
         </p>
       </section>
 

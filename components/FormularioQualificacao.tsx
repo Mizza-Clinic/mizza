@@ -58,7 +58,7 @@ export function FormularioQualificacao({ variante }: Props) {
     if (etapa === 0 && nome.trim().length < 3) return "Escreva seu nome completo.";
     if (etapa === 1) {
       const d = whatsapp.replace(/\D/g, "");
-      if (d.length < 10 || d.length > 13) return "Confira o WhatsApp — precisa do DDD.";
+      if (d.length < 10 || d.length > 13) return "Confira o WhatsApp. Precisa do DDD.";
     }
     if (etapa === 3 && (!cidade.trim() || !estado)) return "Informe cidade e estado.";
     const idx = etapa - 4;
@@ -189,7 +189,7 @@ export function FormularioQualificacao({ variante }: Props) {
           <Tela
             rotulo="Contato"
             titulo="Instagram profissional"
-            nota="Opcional — se quiser, pule."
+            nota="Opcional. Se quiser, pule."
           >
             <input
               autoFocus

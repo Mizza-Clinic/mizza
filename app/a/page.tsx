@@ -2,21 +2,28 @@ import { FormularioQualificacao } from "@/components/FormularioQualificacao";
 import { BarraAplicar } from "@/components/BarraAplicar";
 
 /**
- * VARIANTE A — LP completa (lp_mentoria_copy_layout.md, aprovado 20/07).
+ * VARIANTE A — LP completa.
  * Estilo maison: preto profundo + areia, tipografia como ornamento,
  * cantos retos, filetes finos, blocos alternados. Marrom só no octógono
  * de progresso do formulário (acento único da página).
+ *
+ * Copy (revisão de 21/07):
+ * - Hero abre com a especialidade e a mentora, que é o que o lead precisa
+ *   confirmar em 2 segundos ao chegar do anúncio.
+ * - Três perfis de público, não dois (inclui quem se especializou em área
+ *   pouco recorrente e o dono de clínica que hoje terceiriza o caso).
+ * - Promessa factual: o aluno conduz COM a Dra. Isabella ao lado, não sozinho.
+ * - Sem preço na página; a Amanda apresenta os valores no WhatsApp.
+ * - Sem travessões no texto visível.
  */
 
-const rotuloSecao =
-  "text-[11px] uppercase tracking-[0.35em] text-preto/50";
-const rotuloSecaoEscuro =
-  "text-[11px] uppercase tracking-[0.35em] text-areia/60";
+const rotuloSecao = "text-[11px] uppercase tracking-[0.35em] text-preto/50";
+const rotuloSecaoEscuro = "text-[11px] uppercase tracking-[0.35em] text-areia/60";
 
 export default function VarianteA() {
   return (
     <main className="w-full font-jost text-preto">
-      {/* ============ DOBRA 1 — HERO (preto, tela cheia) ============ */}
+      {/* ============ DOBRA 1 — HERO ============ */}
       <section
         id="hero"
         className="flex min-h-svh flex-col items-center justify-between bg-preto px-6 py-10 text-center"
@@ -31,19 +38,22 @@ export default function VarianteA() {
 
         <div className="max-w-xl">
           <p className="text-[11px] uppercase tracking-[0.3em] text-areia/70">
-            Mentoria presencial · Maringá/PR
+            Mentoria presencial · 2 dias · Maringá/PR
           </p>
-          <h1 className="mt-6 font-display text-5xl leading-[1.08] text-areia sm:text-6xl">
-            O MANEQUIM
+          <h1 className="mt-6 font-display text-5xl leading-[1.05] text-areia sm:text-6xl">
+            RESINA
             <br />
-            NÃO REAGE.
-            <br />
-            O PACIENTE, SIM.
+            COMPOSTA
           </h1>
-          <p className="mx-auto mt-8 max-w-md text-areia/80">
-            Dois dias de imersão em resina composta com a Dra. Isabella
-            Barbosa. Teoria, hands-on — e um caso real finalizado por você, do
-            planejamento ao polimento.
+          <p className="mt-4 font-display text-xl tracking-wide text-areia/90">
+            com a Dra. Isabella Barbosa
+          </p>
+          <p className="mx-auto mt-10 max-w-md text-lg text-areia">
+            Você domina o caso. Ou você passa o caso.
+          </p>
+          <p className="mx-auto mt-4 max-w-md text-areia/75">
+            Dois dias de imersão na Mizza Clinic. Você analisa, planeja e
+            conduz um caso real, com ela ao seu lado.
           </p>
         </div>
 
@@ -55,69 +65,90 @@ export default function VarianteA() {
         </a>
       </section>
 
-      {/* ============ DOBRA 2 — ESPELHO (bloco escuro) ============ */}
+      {/* ============ DOBRA 2 — TRÊS MOMENTOS (identificação) ============ */}
       <section className="border-t border-areia/20 bg-preto px-6 py-20 text-center">
         <div className="mx-auto max-w-xl">
           <p className="font-display text-3xl leading-snug text-areia">
-            VOCÊ SABE A TÉCNICA.
+            O CASO CHEGA. O QUE ACONTECE DEPOIS SEPARA TRÊS PROFISSIONAIS.
           </p>
           <p className="mt-6 text-areia/80">
-            O que ninguém te ensinou foi a{" "}
-            <span className="text-areia">decidir</span> — com o paciente na
-            cadeira, o substrato escurecido, a expectativa alta e a agenda
-            andando.
-          </p>
-          <p className="mt-4 text-areia/80">
-            A distância entre a faculdade e o consultório não se resolve
-            assistindo aula. Se resolve atendendo. Com alguém ao lado que já
-            percorreu o caminho.
+            Resina composta aparece toda semana na cadeira. A diferença entre
+            um profissional e outro não está em saber o que fazer. Está em
+            conseguir conduzir, ou não.
           </p>
 
-          <div className="mt-12 grid gap-px bg-areia/25 border border-areia/25 sm:grid-cols-2">
+          <div className="mt-12 grid gap-px border border-areia/25 bg-areia/25 sm:grid-cols-3">
             <div className="bg-preto p-7 text-left">
-              <p className={rotuloSecaoEscuro}>Se você ainda não atua</p>
+              <p className={rotuloSecaoEscuro}>Ainda não atua</p>
               <p className="mt-3 text-areia/85">
-                Sai daqui com a sequência completa na mão e a segurança de quem
-                já atendeu, não só assistiu.
+                Quer entrar em estética e trava na hora de conduzir um caso do
+                início ao fim sozinha.
               </p>
             </div>
             <div className="bg-preto p-7 text-left">
-              <p className={rotuloSecaoEscuro}>Se você já atua</p>
+              <p className={rotuloSecaoEscuro}>Especializou em outra área</p>
               <p className="mt-3 text-areia/85">
-                Sai daqui com critério: cor, estratificação e acabamento no
-                nível que te deixa cobrar o que o seu trabalho vale.
+                Investiu numa especialidade que aparece pouco na rotina.
+                Resina aparece toda semana, e hoje você não aproveita.
+              </p>
+            </div>
+            <div className="bg-preto p-7 text-left">
+              <p className={rotuloSecaoEscuro}>Tem clínica e terceiriza</p>
+              <p className="mt-3 text-areia/85">
+                Os casos chegam até você, mas saem da sua mão. A margem fica
+                com outro profissional.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ============ DOBRA 3 — A IMERSÃO (branco, timeline) ============ */}
-      <section className="bg-white px-6 py-20">
+      {/* ============ DOBRA 3 — O QUE MUDA (autonomia) ============ */}
+      <section className="bg-white px-6 py-20 text-center">
+        <div className="mx-auto max-w-xl">
+          <p className={rotuloSecao}>O que muda na sua prática</p>
+          <p className="mt-8 font-display text-3xl leading-snug">
+            A TÉCNICA VOCÊ REPETE. O CRITÉRIO VOCÊ CONSTRÓI.
+          </p>
+          <p className="mt-6 text-preto/70">
+            Antes de qualquer camada de resina existe uma sequência de
+            decisões: qual caso aceitar, qual material usar, qual técnica o
+            caso pede, quando parar. É aí que o resultado se define.
+          </p>
+          <p className="mt-4 text-preto/70">
+            Curso ensina a executar. A mentoria coloca a análise, o
+            planejamento e a decisão clínica na sua mão, que é o que sustenta
+            você cobrando pelo caso.
+          </p>
+        </div>
+      </section>
+
+      {/* ============ DOBRA 4 — A IMERSÃO ============ */}
+      <section className="border-t border-preto/10 bg-white px-6 py-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecao} text-center`}>A imersão</p>
           <div className="mt-10">
             <Marco
               numero="I"
-              titulo="Dia 1 — manhã · Teoria"
-              texto="Critério, não receita. Como decifrar qualquer resina do mercado: partícula, opacidade, camada. Cor de verdade — matiz, croma e valor. Planejamento e decisão clínica."
+              titulo="Dia 1, manhã · Teoria"
+              texto="Critério, não receita. Como decifrar qualquer resina do mercado: partícula, opacidade, camada. Cor de verdade: matiz, croma e valor. Planejamento e decisão clínica."
             />
             <Marco
               numero="II"
-              titulo="Dia 1 — tarde · Hands-on"
+              titulo="Dia 1, tarde · Hands-on"
               texto="A técnica na sua mão. Estratificação em 5 camadas, morfologia, acabamento e polimento que seguram cor a longo prazo."
             />
             <Marco
               numero="III"
               titulo="Dia 2 · Paciente real"
-              texto="Você conduz o caso — anamnese, decisão, execução. A Dra. Isabella ao seu lado. Você não observa: você faz."
+              texto="Você analisa, planeja e conduz o atendimento com a Dra. Isabella ao seu lado. Não é observação: a mão é sua, com orientação em cada decisão."
               ultimo
             />
           </div>
         </div>
       </section>
 
-      {/* ============ DOBRA 4 — O QUE VOCÊ VAI DOMINAR (preto) ============ */}
+      {/* ============ DOBRA 5 — O QUE VOCÊ VAI DOMINAR ============ */}
       <section className="bg-preto px-6 py-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecaoEscuro} text-center`}>
@@ -125,11 +156,11 @@ export default function VarianteA() {
           </p>
           <ol className="mt-10">
             {[
-              "Escolher resina por critério — e nunca mais por hábito ou indicação de vendedor",
+              "Escolher resina por critério, e nunca mais por hábito ou indicação de vendedor",
               "Cor: matiz, croma e valor (90% dos erros de cor são erro de valor)",
-              "Estratificação policromática em 5 camadas — inclusive substrato escurecido e dente clareado",
+              "Estratificação policromática em 5 camadas, inclusive substrato escurecido e dente clareado",
               "Morfologia e textura que fazem a restauração desaparecer no sorriso",
-              "Acabamento e polimento — onde a longevidade da cor se decide",
+              "Acabamento e polimento, onde a longevidade da cor se decide",
               "A sequência clínica completa de um caso anterior, do diagnóstico à entrega",
             ].map((item, i) => (
               <li
@@ -146,22 +177,22 @@ export default function VarianteA() {
         </div>
       </section>
 
-      {/* ============ DOBRA 5 — O DIFERENCIAL (branco) ============ */}
+      {/* ============ DOBRA 6 — O DIFERENCIAL ============ */}
       <section className="bg-white px-6 py-20 text-center">
         <div className="mx-auto max-w-xl">
           <p className="font-display text-3xl leading-snug">
-            “QUANDO VOCÊ APRENDE AO LADO DE UM PACIENTE REAL, COM A PRESSÃO
-            REAL DO ATENDIMENTO, O APRENDIZADO NÃO VAI EMBORA.”
+            VOCÊ NÃO ASSISTE. VOCÊ ATENDE, COM ELA AO SEU LADO.
           </p>
           <p className="mx-auto mt-8 max-w-md text-preto/70">
-            Você sai com um caso finalizado nas mãos — e com a memória do que é
-            decidir na cadeira. É diferente de assistir aula. É diferente de
-            treinar no manequim. É o seu consultório, antecipado.
+            Paciente real, no contexto que você encontra no seu consultório.
+            A pressão é a mesma, as decisões são as mesmas, e cada uma delas
+            passa por você com a orientação de quem já resolveu esse caso
+            centenas de vezes. Aprendizado assim não vai embora.
           </p>
         </div>
       </section>
 
-      {/* ============ DOBRA 6 — QUEM CONDUZ ============ */}
+      {/* ============ DOBRA 7 — QUEM CONDUZ ============ */}
       <section className="bg-white px-6 pb-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecao} text-center`}>Quem conduz</p>
@@ -173,8 +204,8 @@ export default function VarianteA() {
             Mizza Clinic.
           </p>
 
-          {/* Citação em bloco 100% preto, com a marca d'água outline
-              cortada pela borda (único uso da marca d'água na página) */}
+          {/* Citação em bloco preto, com a marca d'água outline cortada pela
+              borda (único uso da marca d'água na página) */}
           <div className="relative mt-10 overflow-hidden bg-preto px-8 py-16 text-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -191,15 +222,37 @@ export default function VarianteA() {
           </div>
 
           <p className="mx-auto mt-8 max-w-md text-center text-preto/70">
-            A filosofia da mentoria é a mesma do consultório: conservadorismo
-            inteligente. Preservar estrutura, indicar por critério, recusar o
-            que não deveria ser feito. É o que ela pratica — e é exatamente o
-            que ela ensina.
+            A mesma régua do consultório vale na mentoria: preservar
+            estrutura, indicar por critério, recusar o que não deveria ser
+            feito. Você não sai com um passo a passo decorado. Sai sabendo
+            justificar cada decisão que tomou.
           </p>
         </div>
       </section>
 
-      {/* ============ DOBRA 7 — FORMATOS (branco) ============ */}
+      {/* ============ DOBRA 8 — A IMERSÃO INCLUI ============ */}
+      <section className="border-t border-preto/10 bg-white px-6 py-20">
+        <div className="mx-auto max-w-xl">
+          <p className={`${rotuloSecao} text-center`}>A imersão inclui</p>
+          <ul className="mx-auto mt-8 max-w-md">
+            {[
+              "Teoria e hands-on com todos os materiais",
+              "Atendimento de paciente real na Mizza Clinic",
+              "Material de apoio da mentoria",
+              "Coffee break nos dois dias",
+            ].map((item) => (
+              <li
+                key={item}
+                className="border-b border-preto/10 py-3.5 text-center text-preto/75 last:border-b-0"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ============ DOBRA 9 — FORMATOS (sem preço) ============ */}
       <section className="border-t border-preto/10 bg-white px-6 py-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecao} text-center`}>Formatos</p>
@@ -209,70 +262,68 @@ export default function VarianteA() {
               <p className="mt-3 text-sm text-preto/70">
                 A imersão exclusiva. Dois dias, você e a mentora.
               </p>
-              <p className="mt-6 text-sm tracking-wide text-preto/80">
-                R$ 6.997
-              </p>
             </div>
             <div className="border border-preto/20 p-8 text-center">
               <p className="font-display text-xl tracking-wide">EM DUPLA</p>
               <p className="mt-3 text-sm text-preto/70">
-                A mesma imersão, dividida com um colega da sua confiança — ou
+                A mesma imersão, dividida com um colega da sua confiança, ou
                 com outro profissional aprovado na aplicação.
-              </p>
-              <p className="mt-6 text-sm tracking-wide text-preto/80">
-                R$ 6.000 por pessoa
               </p>
             </div>
           </div>
           <p className="mt-6 text-center text-sm text-preto/60">
+            Os valores de cada formato a Amanda apresenta no contato, junto
+            com as datas disponíveis.
+          </p>
+          <p className="mt-3 text-center text-sm text-preto/60">
             Não tem com quem vir? Na aplicação você pode entrar na lista de
-            duplas abertas — a data é definida quando o par se forma.
+            duplas abertas. A data é definida quando o par se forma.
           </p>
         </div>
       </section>
 
-      {/* ============ DOBRA 9 — PERGUNTAS DIRETAS ============ */}
+      {/* ============ DOBRA 10 — PERGUNTAS DIRETAS ============ */}
       <section className="border-t border-preto/10 bg-white px-6 py-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecao} text-center`}>Perguntas diretas</p>
           <div className="mt-8">
+            <Pergunta q="Vou conduzir o caso sozinha?">
+              Não. Você conduz com a Dra. Isabella ao seu lado, em cada
+              decisão. A mão é sua, a orientação é dela.
+            </Pergunta>
             <Pergunta q="Onde acontece?">
               Na Mizza Clinic, em Maringá/PR. Presencial, nos dois dias.
             </Pergunta>
             <Pergunta q="Preciso já atuar com estética?">
-              Não. A mentoria atende os dois momentos — entrada na
-              especialidade e refinamento.
+              Não. A mentoria atende os dois momentos: entrada na
+              especialidade e refinamento de quem já atende.
             </Pergunta>
             <Pergunta q="A data é fixa?">
               Não. As datas são definidas em conjunto, de acordo com as
               agendas.
             </Pergunta>
-            <Pergunta q="O que está incluso?">
-              Teoria, hands-on com materiais, atendimento de paciente real e o
-              material de apoio da mentoria.
-            </Pergunta>
             <Pergunta q="Como funciona a seleção?">
-              Você preenche a aplicação; a equipe entra em contato pelo
+              Você preenche a aplicação e a equipe entra em contato pelo
               WhatsApp para conversar sobre formato e datas.
             </Pergunta>
           </div>
         </div>
       </section>
 
-      {/* ============ DOBRA 10 — APLICAÇÃO ============ */}
+      {/* ============ DOBRA 11 — APLICAÇÃO ============ */}
       <section id="aplicacao" className="border-t border-preto/10 bg-white px-6 py-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecao} text-center`}>Aplicação</p>
           <p className="mx-auto mt-6 mb-10 max-w-md text-center text-preto/70">
-            A mentoria é individual ou em dupla — o que significa poucas vagas
-            por mês. A aplicação leva um minuto e me ajuda a entender seu
-            momento antes da nossa conversa.
+            A mentoria é individual ou em dupla, o que significa poucas vagas
+            por mês. A aplicação leva um minuto e ajuda a entender seu momento
+            antes da nossa conversa.
           </p>
           <FormularioQualificacao variante="a" />
         </div>
       </section>
 
-      {/* ============ RODAPÉ (preto, wordmark clínica) ============ */}
+      {/* ============ RODAPÉ ============ */}
       <footer className="bg-preto px-6 py-12 text-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

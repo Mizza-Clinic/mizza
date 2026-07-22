@@ -127,8 +127,8 @@ export const PERGUNTA_FORMATO: PerguntaEscolha = {
   rotulo: "Formato de interesse:",
   opcoes: [
     { id: "individual", rotulo: "Individual (imersão exclusiva)", pontos: 0 },
-    { id: "dupla_com_parceiro", rotulo: "Dupla — já tenho com quem dividir", pontos: 0 },
-    { id: "dupla_sem_parceiro", rotulo: "Dupla — teria interesse se houver outra pessoa", pontos: 0 },
+    { id: "dupla_com_parceiro", rotulo: "Dupla, já tenho com quem dividir", pontos: 0 },
+    { id: "dupla_sem_parceiro", rotulo: "Dupla, teria interesse se houver outra pessoa", pontos: 0 },
     { id: "entender_formatos", rotulo: "Quero entender os formatos primeiro", pontos: 0 },
   ],
 };
