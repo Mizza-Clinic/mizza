@@ -49,7 +49,7 @@ export default function VarianteA() {
             com a Dra. Isabella Barbosa
           </p>
           <p className="mx-auto mt-10 max-w-md text-lg text-areia">
-            Você domina o caso. Ou você passa o caso.
+            Dominar resina não é dominar a técnica. É dominar a decisão.
           </p>
           <p className="mx-auto mt-4 max-w-md text-areia/75">
             Dois dias de imersão na Mizza Clinic. Você aprende a analisar,
