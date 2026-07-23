@@ -54,8 +54,8 @@ na Vercel.
 
 ## Onde mexer
 
-- **Perguntas e pontuação:** `lib/formulario.ts` — pontos máx. 18; faixas: 13+ alto, 8–12 médio, 0–7 nutrição. A qualificação é por proxy — **não trocar por pergunta direta de renda** (ver `../formulario_qualificacao_mentoria.md`)
-- **Copy das páginas:** `app/a/page.tsx` e `app/b/page.tsx` — seguir `../perfil_isabella.md` (sem clichê, sem CTA forçado, sem adjetivo exagerado)
+- **Perguntas e pontuação:** `lib/formulario.ts` — pontos máx. 18; faixas: 13+ alto, 8–12 médio, 0–7 nutrição. A qualificação é por proxy — **não trocar por pergunta direta de renda** (ver `../funil/formulario_qualificacao_mentoria.md`)
+- **Copy das páginas:** `app/a/page.tsx` e `app/b/page.tsx` — seguir `../contexto/perfil_isabella.md` (sem clichê, sem CTA forçado, sem adjetivo exagerado)
 - **Painel:** `components/painel/*` e rótulos em `lib/crm.ts`
 - **Banco:** `supabase/schema.sql` — tabelas `leads`, `vagas_parciais`, `eventos` (o evento `vaga_parcial_aberta` é o gancho da Fase 3)
 

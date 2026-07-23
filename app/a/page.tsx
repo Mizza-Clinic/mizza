@@ -52,8 +52,9 @@ export default function VarianteA() {
             Você domina o caso. Ou você passa o caso.
           </p>
           <p className="mx-auto mt-4 max-w-md text-areia/75">
-            Dois dias de imersão na Mizza Clinic. Você analisa, planeja e
-            conduz um caso real, com ela ao seu lado.
+            Dois dias de imersão na Mizza Clinic. Você aprende a analisar,
+            planejar e executar um caso real, com acompanhamento em cada
+            etapa.
           </p>
         </div>
 
@@ -108,7 +109,7 @@ export default function VarianteA() {
         <div className="mx-auto max-w-xl">
           <p className={rotuloSecao}>O que muda na sua prática</p>
           <p className="mt-8 font-display text-3xl leading-snug">
-            A TÉCNICA VOCÊ REPETE. O CRITÉRIO VOCÊ CONSTRÓI.
+            CONSTRUA O SEU CRITÉRIO. DESENVOLVA SUA VISÃO E AUTONOMIA NOS CASOS.
           </p>
           <p className="mt-6 text-preto/70">
             Antes de qualquer camada de resina existe uma sequência de
@@ -156,7 +157,9 @@ export default function VarianteA() {
           </p>
           <ol className="mt-10">
             {[
+              "Treinar o olhar clínico: ler o caso antes de encostar a mão nele",
               "Escolher resina por critério, e nunca mais por hábito ou indicação de vendedor",
+              "Resina ou cerâmica: o critério para indicar cada uma sem desgastar dente à toa",
               "Cor: matiz, croma e valor (90% dos erros de cor são erro de valor)",
               "Estratificação policromática em 5 camadas, inclusive substrato escurecido e dente clareado",
               "Morfologia e textura que fazem a restauração desaparecer no sorriso",
@@ -181,13 +184,14 @@ export default function VarianteA() {
       <section className="bg-white px-6 py-20 text-center">
         <div className="mx-auto max-w-xl">
           <p className="font-display text-3xl leading-snug">
-            VOCÊ NÃO ASSISTE. VOCÊ ATENDE, COM ELA AO SEU LADO.
+            O QUE NÃO SE APRENDE ASSISTINDO É A DECISÃO.
           </p>
           <p className="mx-auto mt-8 max-w-md text-preto/70">
-            Paciente real, no contexto que você encontra no seu consultório.
-            A pressão é a mesma, as decisões são as mesmas, e cada uma delas
-            passa por você com a orientação de quem já resolveu esse caso
-            centenas de vezes. Aprendizado assim não vai embora.
+            Planejar o caso, escolher o material e decidir a conduta com o
+            paciente na cadeira e a agenda andando. Essa é a parte que nenhuma
+            aula alcança. Você percorre esse caminho na realidade do
+            atendimento, com a orientação e o acompanhamento de quem tem a
+            experiência para te corrigir na hora certa.
           </p>
         </div>
       </section>
@@ -215,9 +219,9 @@ export default function VarianteA() {
               className="pointer-events-none absolute -right-24 -top-24 w-72 opacity-20"
             />
             <p className="relative font-display text-2xl leading-snug text-areia">
-              “CONSERVAR É MAIS DIFÍCIL DO QUE SUBSTITUIR.
+              “O QUE NÃO TE DESAFIA,
               <br />
-              POR ISSO POUCA GENTE FAZ.”
+              NÃO TE TRANSFORMA.”
             </p>
           </div>
 
