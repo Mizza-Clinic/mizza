@@ -19,6 +19,8 @@ export interface Opcao {
 export interface PerguntaEscolha {
   id: string;
   tipo: "escolha";
+  /** Permite marcar mais de uma opção. A resposta vira um array de ids. */
+  multipla?: boolean;
   rotulo: string;
   opcoes: Opcao[];
 }
@@ -55,8 +57,8 @@ export const PERGUNTA_RESINA: PerguntaEscolha = {
   rotulo: "Qual resina você mais usa na sua rotina hoje?",
   opcoes: [
     { id: "clinica_disponibiliza", rotulo: "Uso a que a clínica disponibiliza / não escolho", pontos: 0 },
-    { id: "intermediaria", rotulo: "Linha intermediária (Z350, Vittra e similares)", pontos: 2 },
-    { id: "premium", rotulo: "Linha premium (Estelite Omega, Empress Direct, Palfique e similares)", pontos: 3 },
+    { id: "intermediaria", rotulo: "Z350, Vittra e similares", pontos: 2 },
+    { id: "premium", rotulo: "Estelite Omega, Empress Direct, Palfique e similares", pontos: 3 },
     { id: "nao_trabalha", rotulo: "Ainda não trabalho com resina no dia a dia", pontos: 0 },
   ],
 };
@@ -66,7 +68,7 @@ export const PERGUNTA_REGISTRO: PerguntaEscolha = {
   tipo: "escolha",
   rotulo: "Como você registra seus casos?",
   opcoes: [
-    { id: "camera_macro", rotulo: "Câmera com lente macro e flash específico", pontos: 3 },
+    { id: "camera_macro", rotulo: "Estúdio fotográfico (câmera + lente + flash)", pontos: 3 },
     { id: "celular_acessorios", rotulo: "Celular com acessórios (lente/iluminação)", pontos: 2 },
     { id: "celular_simples", rotulo: "Celular simples", pontos: 1 },
     { id: "nao_registro", rotulo: "Ainda não registro", pontos: 0 },
@@ -78,9 +80,8 @@ export const PERGUNTA_LUPA: PerguntaEscolha = {
   tipo: "escolha",
   rotulo: "Você trabalha com magnificação (lupa)?",
   opcoes: [
-    { id: "com_iluminacao", rotulo: "Sim, com iluminação acoplada", pontos: 3 },
-    { id: "simples", rotulo: "Sim, lupa simples", pontos: 2 },
-    { id: "nao_uso", rotulo: "Ainda não uso", pontos: 0 },
+    { id: "sim", rotulo: "Sim", pontos: 3 },
+    { id: "nao", rotulo: "Não", pontos: 0 },
   ],
 };
 
@@ -101,9 +102,9 @@ export const PERGUNTA_EDUCACAO: PerguntaEscolha = {
   tipo: "escolha",
   rotulo: "Qual foi seu último investimento em educação na área?",
   opcoes: [
-    { id: "imersao_presencial", rotulo: "Imersão ou curso presencial (hands-on)", pontos: 3 },
+    { id: "imersao_presencial", rotulo: "Imersão ou curso presencial", pontos: 3 },
     { id: "congresso", rotulo: "Congresso", pontos: 2 },
-    { id: "online_pago", rotulo: "Curso online pago", pontos: 2 },
+    { id: "online_pago", rotulo: "Curso online", pontos: 2 },
     { id: "gratuito", rotulo: "Conteúdo gratuito até agora", pontos: 0 },
   ],
 };
@@ -112,6 +113,7 @@ export const PERGUNTA_EDUCACAO: PerguntaEscolha = {
 export const PERGUNTA_ATRACAO: PerguntaEscolha = {
   id: "atracao",
   tipo: "escolha",
+  multipla: true,
   rotulo: "O que mais te atrai na mentoria?",
   opcoes: [
     { id: "paciente_real", rotulo: "Atender paciente real com acompanhamento", pontos: 0 },
@@ -175,8 +177,11 @@ export interface ResultadoScore {
  *   8–12 medio — contato normal
  *   0–7  baixo — nutrição (não descarte)
  */
-export function calcularScore(respostas: Record<string, string>): ResultadoScore {
+export function calcularScore(
+  respostas: Record<string, string | string[]>
+): ResultadoScore {
   let score = 0;
+  // Todas as perguntas pontuadas são de escolha única, então o valor é string.
   for (const pergunta of PERGUNTAS_PONTUADAS) {
     const opcao = pergunta.opcoes.find((o) => o.id === respostas[pergunta.id]);
     if (opcao) score += opcao.pontos;
@@ -191,10 +196,18 @@ export function calcularScore(respostas: Record<string, string>): ResultadoScore
 }
 
 /** Valida que toda pergunta de escolha tem uma resposta válida. */
-export function respostasCompletas(respostas: Record<string, string>): string | null {
+export function respostasCompletas(
+  respostas: Record<string, string | string[]>
+): string | null {
   for (const pergunta of PERGUNTAS_ESCOLHA) {
     const valor = respostas[pergunta.id];
-    if (!valor || !pergunta.opcoes.some((o) => o.id === valor)) {
+    if (pergunta.multipla) {
+      const ok =
+        Array.isArray(valor) &&
+        valor.length > 0 &&
+        valor.every((v) => pergunta.opcoes.some((o) => o.id === v));
+      if (!ok) return pergunta.id;
+    } else if (typeof valor !== "string" || !pergunta.opcoes.some((o) => o.id === valor)) {
       return pergunta.id;
     }
   }

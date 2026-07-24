@@ -60,7 +60,15 @@ export function FichaLead({ supabase, lead, aoVoltar, aoMudar }: Props) {
   }
 
   const respostasRotuladas = PERGUNTAS_ESCOLHA.map((p) => {
-    const opcao = p.opcoes.find((o) => o.id === lead.respostas?.[p.id]);
+    const val = lead.respostas?.[p.id];
+    if (Array.isArray(val)) {
+      const rotulos = val
+        .map((id) => p.opcoes.find((o) => o.id === id)?.rotulo)
+        .filter(Boolean)
+        .join(", ");
+      return rotulos ? { pergunta: p.rotulo, resposta: rotulos } : null;
+    }
+    const opcao = p.opcoes.find((o) => o.id === val);
     return opcao ? { pergunta: p.rotulo, resposta: opcao.rotulo } : null;
   }).filter(Boolean) as { pergunta: string; resposta: string }[];
 

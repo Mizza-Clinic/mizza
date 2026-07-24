@@ -44,7 +44,7 @@ export interface Lead {
   instagram: string | null;
   cidade: string | null;
   estado: string | null;
-  respostas: Record<string, string>;
+  respostas: Record<string, string | string[]>;
   score: number;
   faixa: "alto" | "medio" | "baixo";
   perfil_entrada: boolean;

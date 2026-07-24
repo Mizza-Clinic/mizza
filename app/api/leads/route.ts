@@ -8,7 +8,7 @@ interface EnvioLead {
   instagram?: string;
   cidade?: string;
   estado?: string;
-  respostas?: Record<string, string>;
+  respostas?: Record<string, string | string[]>;
   consentimento?: boolean;
   variante?: string;
   utms?: Record<string, string>;
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
     faixa,
     perfil_entrada: perfilEntrada,
     estudante,
-    formato_interesse: respostas.formato ?? null,
+    formato_interesse: typeof respostas.formato === "string" ? respostas.formato : null,
     origem: "formulario",
     variante: corpo.variante === "a" || corpo.variante === "b" ? corpo.variante : null,
     ...utms,

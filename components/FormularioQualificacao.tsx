@@ -28,7 +28,7 @@ export function FormularioQualificacao({ variante }: Props) {
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
-  const [respostas, setRespostas] = useState<Record<string, string>>({});
+  const [respostas, setRespostas] = useState<Record<string, string | string[]>>({});
   const [consentimento, setConsentimento] = useState(false);
   const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
@@ -63,9 +63,23 @@ export function FormularioQualificacao({ variante }: Props) {
     if (etapa === 3 && (!cidade.trim() || !estado)) return "Informe cidade e estado.";
     const idx = etapa - 4;
     if (idx >= 0 && idx < PERGUNTAS_ESCOLHA.length) {
-      if (!respostas[PERGUNTAS_ESCOLHA[idx].id]) return "Escolha uma opção para continuar.";
+      const p = PERGUNTAS_ESCOLHA[idx];
+      const v = respostas[p.id];
+      const respondida = p.multipla ? Array.isArray(v) && v.length > 0 : !!v;
+      if (!respondida) return "Escolha uma opção para continuar.";
     }
     return null;
+  }
+
+  function alternarOpcao(perguntaId: string, opcaoId: string) {
+    setErro(null);
+    setRespostas((r) => {
+      const atual = Array.isArray(r[perguntaId]) ? (r[perguntaId] as string[]) : [];
+      const nova = atual.includes(opcaoId)
+        ? atual.filter((x) => x !== opcaoId)
+        : [...atual, opcaoId];
+      return { ...r, [perguntaId]: nova };
+    });
   }
 
   function avancar() {
@@ -234,22 +248,40 @@ export function FormularioQualificacao({ variante }: Props) {
           <Tela
             rotulo={`Pergunta ${idxPergunta + 1} de ${PERGUNTAS_ESCOLHA.length}`}
             titulo={perguntaAtual.rotulo}
+            nota={perguntaAtual.multipla ? "Você pode marcar mais de uma opção." : undefined}
           >
             <div className="space-y-2">
               {perguntaAtual.opcoes.map((opcao) => {
-                const ativo = respostas[perguntaAtual.id] === opcao.id;
+                const val = respostas[perguntaAtual.id];
+                const ativo = perguntaAtual.multipla
+                  ? Array.isArray(val) && val.includes(opcao.id)
+                  : val === opcao.id;
                 return (
                   <button
                     key={opcao.id}
                     type="button"
-                    onClick={() => responderEAvancar(perguntaAtual.id, opcao.id)}
-                    className={`block w-full border px-4 py-4 text-left text-[15px] leading-snug transition-colors ${
+                    onClick={() =>
+                      perguntaAtual.multipla
+                        ? alternarOpcao(perguntaAtual.id, opcao.id)
+                        : responderEAvancar(perguntaAtual.id, opcao.id)
+                    }
+                    className={`flex w-full items-center gap-3 border px-4 py-4 text-left text-[15px] leading-snug transition-colors ${
                       ativo
                         ? "border-preto bg-preto text-white"
                         : "border-preto/20 bg-white text-preto hover:border-preto"
                     }`}
                   >
-                    {opcao.rotulo}
+                    {perguntaAtual.multipla && (
+                      <span
+                        aria-hidden
+                        className={`grid size-4 shrink-0 place-items-center border text-[10px] ${
+                          ativo ? "border-white text-white" : "border-preto/40 text-transparent"
+                        }`}
+                      >
+                        ✓
+                      </span>
+                    )}
+                    <span>{opcao.rotulo}</span>
                   </button>
                 );
               })}
@@ -311,7 +343,7 @@ export function FormularioQualificacao({ variante }: Props) {
               {enviando ? "Enviando…" : "Enviar aplicação"}
             </button>
           ) : (
-            !perguntaAtual && (
+            (!perguntaAtual || perguntaAtual.multipla) && (
               <button
                 type="button"
                 onClick={avancar}
