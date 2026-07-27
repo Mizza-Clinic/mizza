@@ -201,7 +201,7 @@ export function criarSupabaseDemo(): SupabaseClient {
   function from(tabela: string) {
     const linhas = tabelas[tabela] ?? [];
     const filtros: [string, unknown][] = [];
-    let modo: "select" | "update" | "insert" = "select";
+    let modo: "select" | "update" | "insert" | "delete" = "select";
     let mudancas: Record<string, unknown> = {};
     let inserido: Record<string, unknown> | null = null;
 
@@ -209,6 +209,28 @@ export function criarSupabaseDemo(): SupabaseClient {
       if (modo === "update") {
         for (const linha of linhas) {
           if (filtros.every(([c, v]) => linha[c] === v)) Object.assign(linha, mudancas);
+        }
+        return { data: null, error: null };
+      }
+      if (modo === "delete") {
+        const removidos = linhas.filter((l) => filtros.every(([c, v]) => l[c] === v));
+        for (const l of removidos) {
+          const idx = linhas.indexOf(l);
+          if (idx >= 0) linhas.splice(idx, 1);
+        }
+        // Simula o ON DELETE CASCADE / SET NULL do schema real
+        if (tabela === "leads") {
+          for (const l of removidos) {
+            const idsVagas = tabelas.vagas_parciais ?? [];
+            for (let i = idsVagas.length - 1; i >= 0; i--) {
+              if (idsVagas[i].lead_id === l.id) idsVagas.splice(i, 1);
+              else if (idsVagas[i].par_lead_id === l.id) idsVagas[i].par_lead_id = null;
+            }
+            const idsEventos = tabelas.eventos ?? [];
+            for (let i = idsEventos.length - 1; i >= 0; i--) {
+              if (idsEventos[i].lead_id === l.id) idsEventos.splice(i, 1);
+            }
+          }
         }
         return { data: null, error: null };
       }
@@ -236,6 +258,10 @@ export function criarSupabaseDemo(): SupabaseClient {
       update(valores: Record<string, unknown>) {
         modo = "update";
         mudancas = valores;
+        return builder;
+      },
+      delete() {
+        modo = "delete";
         return builder;
       },
       insert(valores: Record<string, unknown>) {

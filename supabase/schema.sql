@@ -63,10 +63,12 @@ create index if not exists leads_criado_em_idx on leads (criado_em desc);
 create table if not exists vagas_parciais (
   id uuid primary key default gen_random_uuid(),
   criado_em timestamptz not null default now(),
-  lead_id uuid not null references leads (id),
+  -- cascade: excluir o lead titular remove a vaga junto
+  lead_id uuid not null references leads (id) on delete cascade,
   status text not null default 'aberta'
     check (status in ('aberta', 'fechada', 'cancelada')),
-  par_lead_id uuid references leads (id),
+  -- set null: excluir o par não apaga a vaga, só desfaz o vínculo
+  par_lead_id uuid references leads (id) on delete set null,
   data_confirmada date,
   observacoes text
 );
@@ -80,7 +82,7 @@ create table if not exists eventos (
   tipo text not null,
   -- tipos previstos: lead_criado | etapa_alterada | vaga_parcial_aberta
   --                  | vaga_parcial_fechada | vaga_parcial_cancelada
-  lead_id uuid references leads (id),
+  lead_id uuid references leads (id) on delete cascade,
   dados jsonb not null default '{}'::jsonb
 );
 

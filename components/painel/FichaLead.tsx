@@ -28,6 +28,8 @@ export function FichaLead({ supabase, lead, aoVoltar, aoMudar }: Props) {
   const [notaSalva, setNotaSalva] = useState(false);
   const [mudandoEtapa, setMudandoEtapa] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
+  const [confirmandoExclusao, setConfirmandoExclusao] = useState(false);
+  const [excluindo, setExcluindo] = useState(false);
 
   async function mudarEtapa(nova: Etapa) {
     if (nova === lead.etapa) return;
@@ -57,6 +59,19 @@ export function FichaLead({ supabase, lead, aoVoltar, aoMudar }: Props) {
       setTimeout(() => setNotaSalva(false), 2000);
       aoMudar();
     }
+  }
+
+  async function excluirLead() {
+    setErro(null);
+    setExcluindo(true);
+    const { error } = await supabase.from("leads").delete().eq("id", lead.id);
+    setExcluindo(false);
+    if (error) {
+      setErro("Não foi possível excluir. Tente de novo.");
+      return;
+    }
+    aoMudar();
+    aoVoltar();
   }
 
   const respostasRotuladas = PERGUNTAS_ESCOLHA.map((p) => {
@@ -211,6 +226,41 @@ export function FichaLead({ supabase, lead, aoVoltar, aoMudar }: Props) {
           </dl>
         </section>
       )}
+
+      {/* Zona de risco */}
+      <section className="mt-10 border-t border-linha pt-6">
+        {!confirmandoExclusao ? (
+          <button
+            onClick={() => setConfirmandoExclusao(true)}
+            className="text-sm text-red-700 underline underline-offset-2 hover:text-red-900"
+          >
+            Excluir lead
+          </button>
+        ) : (
+          <div className="rounded-md border border-red-200 bg-red-50 p-4">
+            <p className="text-sm text-red-900">
+              Excluir <strong>{lead.nome}</strong> apaga o lead e o histórico
+              dele para sempre. Não dá para desfazer.
+            </p>
+            <div className="mt-3 flex gap-3">
+              <button
+                onClick={excluirLead}
+                disabled={excluindo}
+                className="rounded-md bg-red-700 px-4 py-2 text-sm font-medium text-white hover:bg-red-800 disabled:opacity-60"
+              >
+                {excluindo ? "Excluindo…" : "Sim, excluir de vez"}
+              </button>
+              <button
+                onClick={() => setConfirmandoExclusao(false)}
+                disabled={excluindo}
+                className="rounded-md border border-linha px-4 py-2 text-sm text-grafite hover:border-bronze/60"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        )}
+      </section>
     </main>
   );
 }
