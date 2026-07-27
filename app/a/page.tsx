@@ -52,12 +52,13 @@ export default function VarianteA() {
           <p className="mx-auto mt-10 max-w-md text-lg text-areia">
             Dominar resina não é dominar a técnica.
             <br />
-            É dominar a decisão.
+            É dominar a tomada de decisão.
           </p>
           <p className="mx-auto mt-4 max-w-md text-areia/75">
-            Dois dias de imersão na Mizza Clinic. Você aprende a analisar,
+            Em dois dias de imersão na Mizza Clinic, você aprende a analisar,
             planejar e executar um caso real, com acompanhamento em cada
-            etapa.
+            etapa. O que transforma um resultado não é apenas saber fazer.
+            É saber por que fazer.
           </p>
         </div>
 
@@ -76,32 +77,35 @@ export default function VarianteA() {
             O CASO CHEGA. O QUE ACONTECE DEPOIS SEPARA TRÊS PROFISSIONAIS.
           </p>
           <p className="mt-6 text-areia/80">
-            Resina composta aparece toda semana na cadeira. A diferença entre
-            um profissional e outro não está em saber o que fazer. Está em
-            conseguir conduzir, ou não.
+            Resina composta aparece toda semana no consultório. O que
+            diferencia um profissional não é apenas a técnica. É a capacidade
+            de conduzir o caso, fazer as escolhas certas e entregar um
+            resultado previsível.
           </p>
 
           <div className="mt-12 grid gap-px border border-areia/25 bg-areia/25 sm:grid-cols-3">
             <div className="bg-preto p-7 text-left">
               <p className={rotuloSecaoEscuro}>Ainda não atua</p>
               <p className="mt-3 text-areia/85">
-                Quer entrar em estética e trava na hora de conduzir um caso do
-                início ao fim sozinha.
+                Você quer entrar na estética, mas trava quando precisa
+                conduzir um caso do início ao fim. Sente que ainda falta
+                segurança para assumir o paciente sozinho(a).
               </p>
             </div>
             <div className="bg-preto p-7 text-left">
-              <p className={rotuloSecaoEscuro}>Especializou em outra área</p>
+              <p className={rotuloSecaoEscuro}>Se especializou em outra área</p>
               <p className="mt-3 text-areia/85">
-                Investiu tempo e dinheiro numa especialidade que não é bem a
-                sua cara. Resina sempre te atraiu mais, mas o domínio ficou
-                pra trás.
+                Você investiu em outra especialidade, mas percebeu que a
+                estética faz mais sentido para você. A resina continuou sendo
+                um desejo, mas acabou ficando em segundo plano.
               </p>
             </div>
             <div className="bg-preto p-7 text-left">
               <p className={rotuloSecaoEscuro}>Tem clínica e terceiriza</p>
               <p className="mt-3 text-areia/85">
-                Os casos chegam até você, mas saem da sua mão. A margem fica
-                com outro profissional.
+                Os casos chegam até você, mas acabam sendo executados por
+                outro profissional. Você abre mão da margem financeira e da
+                oportunidade de fortalecer sua autoridade clínica.
               </p>
             </div>
           </div>
@@ -127,14 +131,18 @@ export default function VarianteA() {
               CASOS.
             </p>
             <p className="mt-6 text-preto/70">
-              Antes de qualquer camada de resina existe uma sequência de
-              decisões: qual caso aceitar, qual material usar, qual técnica o
-              caso pede, quando parar. É aí que o resultado se define.
+              Antes de qualquer camada de resina, existe uma sequência de
+              decisões: qual caso aceitar, qual material escolher, qual
+              técnica utilizar e quando parar.
             </p>
             <p className="mt-4 text-preto/70">
-              Curso ensina a executar. A mentoria coloca a análise, o
-              planejamento e a decisão clínica na sua mão, que é o que
-              sustenta você cobrando pelo caso.
+              São nessas decisões que o resultado começa a ser construído.
+            </p>
+            <p className="mt-4 text-preto/70">O curso te ensina a executar.</p>
+            <p className="mt-4 text-preto/70">
+              A mentoria ensina a analisar, planejar e decidir com segurança.
+              Porque é essa capacidade que sustenta sua confiança clínica,
+              seus resultados e o valor que você cobra por cada caso.
             </p>
           </div>
         </div>
@@ -149,17 +157,26 @@ export default function VarianteA() {
               <Marco
                 numero="I"
                 titulo="Dia 1, manhã · Teoria"
-                texto="Critério, não receita. Como decifrar qualquer resina do mercado: partícula, opacidade, camada. Cor de verdade: matiz, croma e valor. Planejamento e decisão clínica."
+                linhas={[
+                  "Critério, não receita. Aprenda a decifrar as resinas do mercado: tamanho e tipo de partícula, opacidade, translucidez e indicação de cada camada.",
+                  "Entenda cor de verdade: matiz, croma e valor.",
+                  "Mais do que decorar protocolos, desenvolva o raciocínio clínico para analisar, planejar e tomar decisões com segurança em cada caso.",
+                ]}
               />
               <Marco
                 numero="II"
                 titulo="Dia 1, tarde · Hands-on"
-                texto="A técnica na sua mão. Estratificação em 5 camadas, morfologia, acabamento e polimento que seguram cor a longo prazo."
+                linhas={[
+                  "A técnica na sua mão. Estratificação em cinco camadas, morfologia, acabamento e polimento que garantem a estabilidade da cor ao longo do tempo.",
+                ]}
               />
               <Marco
                 numero="III"
                 titulo="Dia 2 · Paciente real"
-                texto="Você analisa, planeja e conduz o atendimento com a Dra. Isabella ao seu lado. Não é observação: a mão é sua, com orientação em cada decisão."
+                linhas={[
+                  "Você analisa, planeja e conduz um caso clínico real com a Dra. Isabella ao seu lado.",
+                  "Não é observação: a mão é sua, com orientação em cada decisão.",
+                ]}
                 ultimo
               />
             </div>
@@ -184,14 +201,14 @@ export default function VarianteA() {
           </p>
           <ol className="mt-10">
             {[
-              "Treinar o olhar clínico: ler o caso antes de encostar a mão nele",
-              "Escolher resina por critério, e nunca mais por hábito ou indicação de vendedor",
-              "Resina ou cerâmica: o critério para indicar cada uma sem desgastar dente à toa",
-              "Cor: matiz, croma e valor (90% dos erros de cor são erro de valor)",
-              "Estratificação policromática em 5 camadas, inclusive substrato escurecido e dente clareado",
-              "Morfologia e textura que fazem a restauração desaparecer no sorriso",
-              "Acabamento e polimento, onde a longevidade da cor se decide",
-              "A sequência clínica completa de um caso anterior, do diagnóstico à entrega",
+              "Treinar o olhar clínico para analisar o caso antes de encostar a mão nele",
+              "Escolher a resina por critério técnico, e nunca mais por hábito ou indicação de vendedor",
+              "Saber quando indicar resina e quando indicar cerâmica, preservando estrutura dental e entregando a melhor solução para cada paciente",
+              "Dominar cor de verdade: matiz, croma e valor. A maioria dos erros de cor acontece por uma leitura incorreta do valor",
+              "Executar a estratificação policromática em cinco camadas, inclusive em dentes escurecidos e clareados",
+              "Construir morfologia, textura e detalhes ópticos que fazem a restauração desaparecer no sorriso",
+              "Realizar acabamento e polimento com técnica para garantir brilho, textura e estabilidade de cor ao longo do tempo",
+              "Conduzir um caso anterior completo, do diagnóstico ao planejamento, da execução à entrega final, com segurança em cada decisão clínica",
             ].map((item, i) => (
               <li
                 key={i}
@@ -221,14 +238,19 @@ export default function VarianteA() {
           </div>
           <div className="text-center sm:text-left">
             <p className="font-display text-3xl leading-snug">
-              O QUE NÃO SE APRENDE ASSISTINDO É A DECISÃO.
+              PENSAR CLINICAMENTE.
             </p>
             <p className="mt-8 text-preto/70">
-              Planejar o caso, escolher o material e decidir a conduta com o
-              paciente na cadeira e a agenda andando. Essa é a parte que
-              nenhuma aula alcança. Você percorre esse caminho na realidade do
-              atendimento, com a orientação e o acompanhamento de quem tem a
-              experiência para te corrigir na hora certa.
+              Planejar o caso, escolher o material e decidir a melhor conduta
+              com o paciente na cadeira e a agenda acontecendo.
+            </p>
+            <p className="mt-4 text-preto/70">
+              Essa é a parte que nenhuma aula gravada consegue ensinar. Na
+              mentoria, você percorre esse caminho na realidade do
+              consultório, com orientação e acompanhamento em cada etapa. As
+              decisões são suas, mas a experiência de quem já percorreu esse
+              caminho está ao seu lado para corrigir, direcionar e acelerar o
+              seu aprendizado no momento em que ele realmente acontece.
             </p>
           </div>
         </div>
@@ -250,9 +272,14 @@ export default function VarianteA() {
           <p className="mt-8 text-center font-display text-2xl">
             DRA. ISABELLA BARBOSA
           </p>
-          <p className="mt-2 text-center text-sm text-preto/60">
-            Especialista em resina composta e cerâmica. Sócia fundadora da
-            Mizza Clinic.
+          <p className="mx-auto mt-2 max-w-md text-center text-sm text-preto/60">
+            Formada em Odontologia pelo Centro Universitário Cesumar
+            (Maringá/PR) em 2017, onde foi monitora de Dentística
+            Restauradora. Especialista em Implantodontia, aprofundou sua
+            prática em resina composta com referências como Luiz Narciso
+            Baratieri, Ronaldo Hirata e Newton Fahl. Hoje é professora de
+            pós-graduação no IOA Maringá, na especialização em Dentística e
+            Prótese Dentária.
           </p>
 
           {/* Citação em bloco preto, com a marca d'água outline cortada pela
@@ -273,10 +300,10 @@ export default function VarianteA() {
           </div>
 
           <p className="mx-auto mt-8 max-w-md text-center text-preto/70">
-            A mesma régua do consultório vale na mentoria: preservar
-            estrutura, indicar por critério, recusar o que não deveria ser
-            feito. Você não sai com um passo a passo decorado. Sai sabendo
-            justificar cada decisão que tomou.
+            A mesma régua do consultório vale na mentoria. Preservar
+            estrutura. Indicar por critério. Recusar o que não deveria ser
+            feito. Você não sai com um passo a passo decorado. Sai com
+            raciocínio clínico, para justificar cada decisão que tomou.
           </p>
         </div>
       </section>
@@ -423,12 +450,12 @@ export default function VarianteA() {
 function Marco({
   numero,
   titulo,
-  texto,
+  linhas,
   ultimo = false,
 }: {
   numero: string;
   titulo: string;
-  texto: string;
+  linhas: string[];
   ultimo?: boolean;
 }) {
   return (
@@ -442,7 +469,11 @@ function Marco({
         <h3 className="text-[13px] font-medium uppercase tracking-[0.2em]">
           {titulo}
         </h3>
-        <p className="mt-3 text-preto/70">{texto}</p>
+        {linhas.map((linha, i) => (
+          <p key={i} className={i === 0 ? "mt-3 text-preto/70" : "mt-2 text-preto/70"}>
+            {linha}
+          </p>
+        ))}
       </div>
     </div>
   );
