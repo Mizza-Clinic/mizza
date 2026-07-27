@@ -29,7 +29,9 @@ export default function VarianteB() {
           com a Dra. Isabella Barbosa
         </p>
         <p className="mx-auto mt-8 max-w-md text-lg text-areia">
-          Dominar resina não é dominar a técnica. É dominar a decisão.
+          Dominar resina não é dominar a técnica.
+          <br />
+          É dominar a decisão.
         </p>
         <p className="mx-auto mt-4 max-w-md text-areia/75">
           Dois dias de imersão na Mizza Clinic. Você analisa, planeja e conduz

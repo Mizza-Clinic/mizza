@@ -50,7 +50,9 @@ export default function VarianteA() {
             com a Dra. Isabella Barbosa
           </p>
           <p className="mx-auto mt-10 max-w-md text-lg text-areia">
-            Dominar resina não é dominar a técnica. É dominar a decisão.
+            Dominar resina não é dominar a técnica.
+            <br />
+            É dominar a decisão.
           </p>
           <p className="mx-auto mt-4 max-w-md text-areia/75">
             Dois dias de imersão na Mizza Clinic. Você aprende a analisar,
@@ -90,8 +92,9 @@ export default function VarianteA() {
             <div className="bg-preto p-7 text-left">
               <p className={rotuloSecaoEscuro}>Especializou em outra área</p>
               <p className="mt-3 text-areia/85">
-                Investiu numa especialidade que aparece pouco na rotina.
-                Resina aparece toda semana, e hoje você não aproveita.
+                Investiu tempo e dinheiro numa especialidade que não é bem a
+                sua cara. Resina sempre te atraiu mais, mas o domínio ficou
+                pra trás.
               </p>
             </div>
             <div className="bg-preto p-7 text-left">
