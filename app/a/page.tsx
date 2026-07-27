@@ -265,7 +265,7 @@ export default function VarianteA() {
               aria-hidden
               className="pointer-events-none absolute -right-24 -top-24 w-72 opacity-20"
             />
-            <p className="relative font-display text-2xl leading-snug text-areia">
+            <p className="relative font-display text-xl leading-snug text-areia sm:text-2xl">
               “O QUE NÃO TE DESAFIA,
               <br />
               NÃO TE TRANSFORMA.”
