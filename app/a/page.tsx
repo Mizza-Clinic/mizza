@@ -106,58 +106,68 @@ export default function VarianteA() {
       </section>
 
       {/* ============ DOBRA 3 — O QUE MUDA (autonomia) ============ */}
-      <section className="bg-white px-6 py-20 text-center">
-        <div className="mx-auto max-w-xl">
-          <p className={rotuloSecao}>O que muda na sua prática</p>
-          <p className="mt-8 font-display text-3xl leading-snug">
-            CONSTRUA O SEU CRITÉRIO. DESENVOLVA SUA VISÃO E AUTONOMIA NOS CASOS.
-          </p>
-          <p className="mt-6 text-preto/70">
-            Antes de qualquer camada de resina existe uma sequência de
-            decisões: qual caso aceitar, qual material usar, qual técnica o
-            caso pede, quando parar. É aí que o resultado se define.
-          </p>
-          <p className="mt-4 text-preto/70">
-            Curso ensina a executar. A mentoria coloca a análise, o
-            planejamento e a decisão clínica na sua mão, que é o que sustenta
-            você cobrando pelo caso.
-          </p>
-        </div>
-      </section>
-
-      {/* ============ QUEBRA EDITORIAL — foto em P&B ============ */}
-      <section className="border-t border-preto/10 bg-white">
-        <div className="relative aspect-[3/4] w-full sm:aspect-[4/3]">
-          <Image
-            src="/fotos/mentoria-teoria-pb.jpg"
-            alt="Dra. Isabella Barbosa conduzindo a parte teórica da mentoria"
-            fill
-            sizes="100vw"
-            className="object-cover object-[50%_30%]"
-          />
+      <section className="bg-white px-6 py-20">
+        <div className="mx-auto grid max-w-4xl gap-10 sm:grid-cols-2 sm:items-center sm:gap-12">
+          <div className="relative aspect-[4/5] w-full">
+            <Image
+              src="/fotos/mentoria-teoria-pb.jpg"
+              alt="Dra. Isabella Barbosa conduzindo a parte teórica da mentoria"
+              fill
+              sizes="(min-width: 640px) 32rem, 100vw"
+              className="object-cover object-[50%_25%]"
+            />
+          </div>
+          <div className="text-center sm:text-left">
+            <p className={rotuloSecao}>O que muda na sua prática</p>
+            <p className="mt-6 font-display text-3xl leading-snug">
+              CONSTRUA O SEU CRITÉRIO. DESENVOLVA SUA VISÃO E AUTONOMIA NOS
+              CASOS.
+            </p>
+            <p className="mt-6 text-preto/70">
+              Antes de qualquer camada de resina existe uma sequência de
+              decisões: qual caso aceitar, qual material usar, qual técnica o
+              caso pede, quando parar. É aí que o resultado se define.
+            </p>
+            <p className="mt-4 text-preto/70">
+              Curso ensina a executar. A mentoria coloca a análise, o
+              planejamento e a decisão clínica na sua mão, que é o que
+              sustenta você cobrando pelo caso.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ============ DOBRA 4 — A IMERSÃO ============ */}
       <section className="border-t border-preto/10 bg-white px-6 py-20">
-        <div className="mx-auto max-w-xl">
-          <p className={`${rotuloSecao} text-center`}>A imersão</p>
-          <div className="mt-10">
-            <Marco
-              numero="I"
-              titulo="Dia 1, manhã · Teoria"
-              texto="Critério, não receita. Como decifrar qualquer resina do mercado: partícula, opacidade, camada. Cor de verdade: matiz, croma e valor. Planejamento e decisão clínica."
-            />
-            <Marco
-              numero="II"
-              titulo="Dia 1, tarde · Hands-on"
-              texto="A técnica na sua mão. Estratificação em 5 camadas, morfologia, acabamento e polimento que seguram cor a longo prazo."
-            />
-            <Marco
-              numero="III"
-              titulo="Dia 2 · Paciente real"
-              texto="Você analisa, planeja e conduz o atendimento com a Dra. Isabella ao seu lado. Não é observação: a mão é sua, com orientação em cada decisão."
-              ultimo
+        <div className="mx-auto grid max-w-4xl gap-12 sm:grid-cols-[1fr_14rem] sm:items-start">
+          <div>
+            <p className={rotuloSecao}>A imersão</p>
+            <div className="mt-10">
+              <Marco
+                numero="I"
+                titulo="Dia 1, manhã · Teoria"
+                texto="Critério, não receita. Como decifrar qualquer resina do mercado: partícula, opacidade, camada. Cor de verdade: matiz, croma e valor. Planejamento e decisão clínica."
+              />
+              <Marco
+                numero="II"
+                titulo="Dia 1, tarde · Hands-on"
+                texto="A técnica na sua mão. Estratificação em 5 camadas, morfologia, acabamento e polimento que seguram cor a longo prazo."
+              />
+              <Marco
+                numero="III"
+                titulo="Dia 2 · Paciente real"
+                texto="Você analisa, planeja e conduz o atendimento com a Dra. Isabella ao seu lado. Não é observação: a mão é sua, com orientação em cada decisão."
+                ultimo
+              />
+            </div>
+          </div>
+          <div className="relative order-first aspect-[3/4] w-full sm:order-none sm:mt-14">
+            <Image
+              src="/fotos/mentoria-handson.jpg"
+              alt="Prática de hands-on durante a mentoria"
+              fill
+              sizes="(min-width: 640px) 14rem, 100vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -195,27 +205,29 @@ export default function VarianteA() {
       </section>
 
       {/* ============ DOBRA 6 — O DIFERENCIAL ============ */}
-      <section className="bg-white pb-20 text-center">
-        <div className="relative aspect-[4/3] w-full sm:aspect-[16/9]">
-          <Image
-            src="/fotos/mentoria-diferencial.jpg"
-            alt="Atendimento de paciente real durante a mentoria, com acompanhamento em cada etapa"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="mx-auto max-w-xl px-6 pt-16">
-          <p className="font-display text-3xl leading-snug">
-            O QUE NÃO SE APRENDE ASSISTINDO É A DECISÃO.
-          </p>
-          <p className="mx-auto mt-8 max-w-md text-preto/70">
-            Planejar o caso, escolher o material e decidir a conduta com o
-            paciente na cadeira e a agenda andando. Essa é a parte que nenhuma
-            aula alcança. Você percorre esse caminho na realidade do
-            atendimento, com a orientação e o acompanhamento de quem tem a
-            experiência para te corrigir na hora certa.
-          </p>
+      <section className="border-t border-preto/10 bg-white px-6 py-20">
+        <div className="mx-auto grid max-w-4xl gap-10 sm:grid-cols-2 sm:items-center sm:gap-12">
+          <div className="relative order-first aspect-[4/3] w-full sm:order-last">
+            <Image
+              src="/fotos/mentoria-diferencial.jpg"
+              alt="Atendimento de paciente real durante a mentoria, com acompanhamento em cada etapa"
+              fill
+              sizes="(min-width: 640px) 32rem, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="text-center sm:text-left">
+            <p className="font-display text-3xl leading-snug">
+              O QUE NÃO SE APRENDE ASSISTINDO É A DECISÃO.
+            </p>
+            <p className="mt-8 text-preto/70">
+              Planejar o caso, escolher o material e decidir a conduta com o
+              paciente na cadeira e a agenda andando. Essa é a parte que
+              nenhuma aula alcança. Você percorre esse caminho na realidade do
+              atendimento, com a orientação e o acompanhamento de quem tem a
+              experiência para te corrigir na hora certa.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -263,6 +275,31 @@ export default function VarianteA() {
             feito. Você não sai com um passo a passo decorado. Sai sabendo
             justificar cada decisão que tomou.
           </p>
+        </div>
+      </section>
+
+      {/* ============ DOBRA 7.5 — PROVA SOCIAL (depoimentos) ============ */}
+      <section className="border-t border-preto/10 bg-white px-6 py-20">
+        <div className="mx-auto max-w-4xl">
+          <p className={`${rotuloSecao} text-center`}>Quem já fez</p>
+          <div className="mt-10 grid gap-8 sm:grid-cols-3">
+            <Depoimento
+              foto="/fotos/depoimento-gabrielle.jpg"
+              nome="Dra. Gabrielle Ribeiro Teixeira"
+              cidade="Loanda, PR"
+              quote="A prática no paciente muda totalmente a nossa visão. Tem vários aspectos que a gente não vive no manequim."
+            />
+            <Depoimento
+              foto="/fotos/depoimento-luis.jpg"
+              nome="Dr. Luis Fernando Gianchini"
+              quote="Consegui tirar praticamente todas as dúvidas que eu tinha sobre planejamento e execução dos casos em resina composta."
+            />
+            <Depoimento
+              foto="/fotos/depoimento-karla.jpg"
+              nome="Dra. Karla Giovanna Soares"
+              quote="Foi muito bom. Um aprendizado incrível."
+            />
+          </div>
         </div>
       </section>
 
@@ -404,6 +441,33 @@ function Marco({
         </h3>
         <p className="mt-3 text-preto/70">{texto}</p>
       </div>
+    </div>
+  );
+}
+
+function Depoimento({
+  foto,
+  nome,
+  cidade,
+  quote,
+}: {
+  foto: string;
+  nome: string;
+  cidade?: string;
+  quote: string;
+}) {
+  return (
+    <div className="text-center">
+      <div className="relative mx-auto aspect-[4/5] w-full max-w-[11rem] overflow-hidden">
+        <Image src={foto} alt={nome} fill sizes="11rem" className="object-cover" />
+      </div>
+      <p className="mt-5 text-[15px] italic leading-snug text-preto/80">
+        “{quote}”
+      </p>
+      <p className="mt-4 text-[13px] font-medium uppercase tracking-[0.1em]">
+        {nome}
+      </p>
+      {cidade && <p className="text-[12px] text-preto/50">{cidade}</p>}
     </div>
   );
 }
