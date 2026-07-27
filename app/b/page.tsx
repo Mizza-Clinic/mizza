@@ -19,7 +19,10 @@ export default function VarianteB() {
           </span>
         </div>
 
-        <p className="mt-10 text-[11px] uppercase tracking-[0.3em] text-areia/70">
+        <p className="mt-10 font-display text-sm uppercase tracking-[0.4em] text-areia/90">
+          Autêntica
+        </p>
+        <p className="mt-3 text-[11px] uppercase tracking-[0.3em] text-areia/70">
           Mentoria presencial · 2 dias · Maringá/PR
         </p>
         <h1 className="mt-5 font-display text-4xl leading-[1.05] text-areia sm:text-5xl">

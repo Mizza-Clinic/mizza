@@ -38,7 +38,10 @@ export default function VarianteA() {
         </div>
 
         <div className="max-w-xl">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-areia/70">
+          <p className="font-display text-sm uppercase tracking-[0.4em] text-areia/90">
+            Autêntica
+          </p>
+          <p className="mt-3 text-[11px] uppercase tracking-[0.3em] text-areia/70">
             Mentoria presencial · 2 dias · Maringá/PR
           </p>
           <h1 className="mt-6 font-display text-5xl leading-[1.05] text-areia sm:text-6xl">
