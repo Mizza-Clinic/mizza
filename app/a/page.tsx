@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FormularioQualificacao } from "@/components/FormularioQualificacao";
 import { BarraAplicar } from "@/components/BarraAplicar";
 
@@ -124,6 +125,19 @@ export default function VarianteA() {
         </div>
       </section>
 
+      {/* ============ QUEBRA EDITORIAL — foto em P&B ============ */}
+      <section className="border-t border-preto/10 bg-white">
+        <div className="relative aspect-[3/4] w-full sm:aspect-[4/3]">
+          <Image
+            src="/fotos/mentoria-teoria-pb.jpg"
+            alt="Dra. Isabella Barbosa conduzindo a parte teórica da mentoria"
+            fill
+            sizes="100vw"
+            className="object-cover object-[50%_30%]"
+          />
+        </div>
+      </section>
+
       {/* ============ DOBRA 4 — A IMERSÃO ============ */}
       <section className="border-t border-preto/10 bg-white px-6 py-20">
         <div className="mx-auto max-w-xl">
@@ -181,8 +195,17 @@ export default function VarianteA() {
       </section>
 
       {/* ============ DOBRA 6 — O DIFERENCIAL ============ */}
-      <section className="bg-white px-6 py-20 text-center">
-        <div className="mx-auto max-w-xl">
+      <section className="bg-white pb-20 text-center">
+        <div className="relative aspect-[4/3] w-full sm:aspect-[16/9]">
+          <Image
+            src="/fotos/mentoria-diferencial.jpg"
+            alt="Atendimento de paciente real durante a mentoria, com acompanhamento em cada etapa"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="mx-auto max-w-xl px-6 pt-16">
           <p className="font-display text-3xl leading-snug">
             O QUE NÃO SE APRENDE ASSISTINDO É A DECISÃO.
           </p>
@@ -200,6 +223,15 @@ export default function VarianteA() {
       <section className="bg-white px-6 pb-20">
         <div className="mx-auto max-w-xl">
           <p className={`${rotuloSecao} text-center`}>Quem conduz</p>
+          <div className="relative mx-auto mt-8 aspect-[4/5] w-full max-w-xs overflow-hidden">
+            <Image
+              src="/fotos/isabella-retrato.jpg"
+              alt="Dra. Isabella Barbosa"
+              fill
+              sizes="(min-width: 640px) 20rem, 80vw"
+              className="object-cover"
+            />
+          </div>
           <p className="mt-8 text-center font-display text-2xl">
             DRA. ISABELLA BARBOSA
           </p>
