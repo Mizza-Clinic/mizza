@@ -275,14 +275,24 @@ export default function VarianteA() {
           <p className="mt-8 text-center font-display text-2xl">
             DRA. ISABELLA BARBOSA
           </p>
-          <p className="mx-auto mt-2 max-w-md text-center text-sm text-preto/60">
-            Formada em Odontologia pelo Centro Universitário Cesumar
-            (Maringá/PR) em 2017, onde foi monitora de Dentística
-            Restauradora. Especialista em Implantodontia, aprofundou sua
-            prática em resina composta com referências como Luiz Narciso
-            Baratieri, Ronaldo Hirata e Newton Fahl. Hoje é professora de
-            pós-graduação no IOA Maringá, na especialização em Dentística e
-            Prótese Dentária.
+          <p className="mx-auto mt-2 max-w-lg text-center text-sm text-preto/60">
+            Natural de Cianorte, no Paraná, formou-se em Odontologia pelo
+            Centro Universitário Cesumar, em Maringá, onde foi monitora de
+            Dentística Restauradora durante a graduação. Desde 2017, atua em
+            consultório particular, com foco em Odontologia Restauradora e
+            Reabilitação Oral. É especialista em Implantodontia, com
+            especialização concluída em 2021, e aprofundou seus conhecimentos
+            e sua prática clínica com Luiz Narciso Baratieri e Ronaldo Hirata,
+            além de ter atingido a excelência em resina composta com Newton
+            Fahl.
+          </p>
+          <p className="mx-auto mt-3 max-w-lg text-center text-sm text-preto/60">
+            Seu trabalho é guiado pela ética profissional e pela adesão
+            correta aos materiais dentários, sempre em busca de um tratamento
+            íntegro para cada paciente. É professora de pós-graduação no IOA
+            Maringá, na especialização em Dentística e Prótese Dentária, e
+            atualmente é graduanda em Reabilitação Oral na Era Adesiva, pela
+            Kina Essencial Balance/UCAM.
           </p>
 
           {/* Citação em bloco preto, com a marca d'água outline cortada pela
