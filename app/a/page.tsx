@@ -355,6 +355,7 @@ export default function VarianteA() {
               "Teoria e hands-on com todos os materiais",
               "Atendimento de paciente real na Mizza Clinic",
               "Material de apoio da mentoria",
+              "Kit de polimento DH Pro Isabella Barbosa",
               "Coffee break nos dois dias",
             ].map((item) => (
               <li
