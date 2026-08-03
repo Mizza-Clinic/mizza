@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, Jost, Marcellus } from "next/font/google";
 import localFont from "next/font/local";
 import { MetaPixel } from "@/components/MetaPixel";
+import { Clarity } from "@/components/Clarity";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -54,6 +55,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <MetaPixel />
+        <Clarity />
         {children}
       </body>
     </html>
